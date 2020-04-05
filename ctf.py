@@ -191,19 +191,19 @@ def urlencode(domains):
 
 
 async def get_instructions(session, semaphore, c2server):
-    url = f'http://{c2server}/ctf'
+    url = f'https://{c2server}/ctf'
     async with semaphore, session.get(url, headers=headers) as response:
         return await response.text()
 
 
 async def try_code(session, semaphore, c2server, code):
-    url = f'http://{c2server}/ctf/pieces/{code}'
+    url = f'https://{c2server}/ctf/pieces/{code}'
     async with semaphore, session.get(url, headers=headers) as response:
         return await response.text()
 
 
 async def try_measure(session, semaphore, c2server, measure):
-    url = f'http://{c2server}/ctf/prevent'
+    url = f'https://{c2server}/ctf/prevent'
     data = json.dumps({
         'measure': measure
     })
@@ -212,7 +212,7 @@ async def try_measure(session, semaphore, c2server, measure):
 
 
 async def main():
-    c2server = 'localhost:1337'
+    c2server = 'tagarni.net'
     domains = generate_domains()
     codes = urlencode(base64encode(domains))
     concurrency_limit = len(codes) // 10
