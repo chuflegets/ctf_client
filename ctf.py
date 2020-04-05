@@ -6,109 +6,35 @@ import time
 import urllib.parse
 
 successful_data = [
-    {
-        'letter': 'g',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', '-', 'v', 'i', 'r', 'u', 's', 'u', 's', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': '3',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '.', 'm', 'e', 'd', 's', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 't',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'c', 'o', 'n', 't', 'a', 'i', 'n', '.', 'c',
-                   'o', 'm']
-    },
-    {
-        'letter': '_',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'c', 'o', 'n', 't', 'a', 'i', 'n', 'e', 'd',
-                   '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 't',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'f', 'e', 'e', 'd', 'b', 'a', 'c', 'k', '.',
-                   'c', 'o', 'm']
-    },
-    {
-        'letter': '3',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'h', 'a', 'r', 'm', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 's',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'h', 'a', 'z', 'a', 'r', 'd', '.', 'c', 'o',
-                   'm']
-    },
-    {
-        'letter': 't',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'm', 'e', 's', 's', 'a', 'g', 'e', '.', 'c',
-                   'o', 'm']
-    },
-    {
-        'letter': '3',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 't', 'r', 'o', 'u', 'b', 'l', 'e', '.', 'c',
-                   'o', 'm']
-    },
-    {
-        'letter': 'd',
-        'pieces': ['f', 'i', 'g', 'h', 't', 'c', 'o', 'v', 'i', 'd', '.', 'p', 'r', 'o', 'f', 'i', 't', 'a', 'b', 'i',
-                   't', '.', 'c', 'l', 'u', 'b']
-    },
-    {
-        'letter': '_',
-        'pieces': ['m', 'a', 's', 'k', '.', 'c', 'o', 'r', 'o', 'n', 'a', 'p', 'r', 'o', 't', 'e', 'c', 't', 'i', 'v',
-                   'e', '.', 's', 't', 'o', 'r', 'e']
-    },
-    {
-        'letter': 'f',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '-', 'g', 'u', 'i', 'd', 'a', 'n', 'c', 'e',
-                   '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': '0',
-        'pieces': ['n', 'y', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', 'c', 'a', 's', 'e', 's', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 'r',
-        'pieces': ['c', 'o', 'v', 'i', 'd', 'n', 'e', 'w', 's', 'u', 'p', 'd', 'a', 't', 'e', '.', 'o', 'n', 'l', 'i',
-                   'n', 'e']
-    },
-    {
-        'letter': '_',
-        'pieces': ['c', 'o', 'v', 'i', 'd', 'v', 'o', 'i', 'c', 'e', 'p', 'o', 'r', 't', 'a', 'l', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 'd',
-        'pieces': ['p', 'o', 'r', 't', 'a', 'l', '-', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', '.', 'm', 'l']
-    },
-    {
-        'letter': '4',
-        'pieces': ['p', 'o', 'r', 't', 'a', 'l', '-', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', '.', 'g', 'a']
-    },
-    {
-        'letter': '_',
-        'pieces': ['a', 'y', 'a', 'n', 'g', 'a', 'r', 't', 's', '.', 'o', 'r', '.', 'k', 'r']
-    },
-    {
-        'letter': 'v',
-        'pieces': ['c', 'o', 'v', 'i', 'd', '-', '1', '9', 'd', 'o', 'n', 'o', 'r', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': '1',
-        'pieces': ['c', 'o', 'v', 'i', 'd', '1', '9', 'g', 'r', 'a', 'n', 't', 'o', 'r', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 'r',
-        'pieces': ['c', 'o', 'v', 'i', 'd', '-', '1', '9', 'd', 'o', 'n', 'a', 't', 'o', 'r', '.', 'c', 'o', 'm']
-    },
-    {
-        'letter': 'u',
-        'pieces': ['c', 'u', 'r', 'e', 'c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '.', 'l', 'i', 'f', 'e']
-    },
-    {
-        'letter': '5',
-        'pieces': ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'r', 'e', 's', 'o', 'n', 'a', 'n', 'c', 'e',
-                   'c', 'u', 'r', 'e', '.', 'c', 'o', 'm']
-    }
+    ['c', 'o', 'r', 'o', 'n', 'a', '-', 'v', 'i', 'r', 'u', 's', 'u', 's', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '.', 'm', 'e', 'd', 's', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'c', 'o', 'n', 't', 'a', 'i', 'n', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'c', 'o', 'n', 't', 'a', 'i', 'n', 'e', 'd', '.', 'c', 'o',
+     'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'f', 'e', 'e', 'd', 'b', 'a', 'c', 'k', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'h', 'a', 'r', 'm', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'h', 'a', 'z', 'a', 'r', 'd', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'm', 'e', 's', 's', 'a', 'g', 'e', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 't', 'r', 'o', 'u', 'b', 'l', 'e', '.', 'c', 'o', 'm'],
+    ['f', 'i', 'g', 'h', 't', 'c', 'o', 'v', 'i', 'd', '.', 'p', 'r', 'o', 'f', 'i', 't', 'a', 'b', 'i', 't', '.', 'c',
+     'l', 'u', 'b'],
+    ['m', 'a', 's', 'k', '.', 'c', 'o', 'r', 'o', 'n', 'a', 'p', 'r', 'o', 't', 'e', 'c', 't', 'i', 'v', 'e', '.', 's',
+     't', 'o', 'r', 'e'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '-', 'g', 'u', 'i', 'd', 'a', 'n', 'c', 'e',
+     '.', 'c', 'o', 'm'],
+    ['n', 'y', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', 'c', 'a', 's', 'e', 's', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'v', 'i', 'd', 'n', 'e', 'w', 's', 'u', 'p', 'd', 'a', 't', 'e', '.', 'o', 'n', 'l', 'i',
+     'n', 'e'],
+    ['c', 'o', 'v', 'i', 'd', 'v', 'o', 'i', 'c', 'e', 'p', 'o', 'r', 't', 'a', 'l', '.', 'c', 'o', 'm'],
+    ['p', 'o', 'r', 't', 'a', 'l', '-', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', '.', 'm', 'l'],
+    ['p', 'o', 'r', 't', 'a', 'l', '-', 'c', 'o', 'v', 'i', 'd', '-', '1', '9', '.', 'g', 'a'],
+    ['a', 'y', 'a', 'n', 'g', 'a', 'r', 't', 's', '.', 'o', 'r', '.', 'k', 'r'],
+    ['c', 'o', 'v', 'i', 'd', '-', '1', '9', 'd', 'o', 'n', 'o', 'r', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'v', 'i', 'd', '1', '9', 'g', 'r', 'a', 'n', 't', 'o', 'r', '.', 'c', 'o', 'm'],
+    ['c', 'o', 'v', 'i', 'd', '-', '1', '9', 'd', 'o', 'n', 'a', 't', 'o', 'r', '.', 'c', 'o', 'm'],
+    ['c', 'u', 'r', 'e', 'c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', '.', 'l', 'i', 'f', 'e'],
+    ['c', 'o', 'r', 'o', 'n', 'a', 'v', 'i', 'r', 'u', 's', 'r', 'e', 's', 'o', 'n', 'a', 'n', 'c', 'e',
+     'c', 'u', 'r', 'e', '.', 'c', 'o', 'm']
 ]
 
 fake_data = [['1', '0', '0', '4', '.', 'i', 'n'],
@@ -241,104 +167,77 @@ fake_data = [['1', '0', '0', '4', '.', 'i', 'n'],
              ['x', '1', 'x', '4', 'x', '0', '.', 'n', 'e', 't'],
              ['w', 'i', 'n', 'u', 'p', 'd', 'a', 't', 'e', 'c', 'o', 'n', 't', 'r', 'o', 'l', '.', 'n', 'e', 't'],
              ['z', 'e', 'd', 'o', 'z', 'e', '9', '.', 'c', 'o', '.', 'c', 'c'],
-             ['z', 'u', 'n', 'd', 'e', 'r', '.', 'f', 'a', 'c', 'e', 'l', 'o', 'o', 'k', 'b', 's', '.', 'n', 'e', 't']]
+             ['z', 'u', 'n', 'd', 'e', 'r', '.', 'f', 'a', 'c', 'e', 'l', 'o', 'o', 'k', 'b', 's', '.', 'n', 'e', 't']
+             ]
+
+headers = {
+    'Connection': 'close',
+    'Upgrade-Insecure-Requests': str(1),
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/95.0'
+}
 
 
-def generate_successful_domains():
-    return [{'letter': element['letter'], 'domain': ''.join(element['pieces'])} for element in successful_data]
-
-
-def generate_fake_domains():
-    return [''.join(pieces) for pieces in fake_data]
+def generate_domains():
+    data = successful_data + fake_data
+    return [''.join(pieces) for pieces in data]
 
 
 def base64encode(domains):
-    return [
-        {
-            'letter': element['letter'],
-            'domain': base64.b64encode(element['domain'].encode()).decode()
-        } for element in domains]
-
-
-def base64_encode_fake(domains):
     return [base64.b64encode(element.encode()).decode() for element in domains]
 
 
 def urlencode(domains):
-    return [
-        {
-            'letter': element['letter'],
-            'domain': urllib.parse.quote(element['domain'])
-        } for element in domains
-    ]
-
-
-def urlencode_fake(domains):
     return [urllib.parse.quote(element) for element in domains]
 
 
-def get_successful_params():
-    domain_map = generate_successful_domains()
-    base64_domains = base64encode(domain_map)
-    urlencoded_domains = urlencode(base64_domains)
-    return [element['domain'] for element in urlencoded_domains]
-
-
-def get_fake_params():
-    domains = generate_fake_domains()
-    base64_domains = base64_encode_fake(domains)
-    urlencoded_domains = urlencode_fake(base64_domains)
-    return urlencoded_domains
-
-
-def make_headers():
-    headers = {
-        'Connection': 'close',
-        'Upgrade-Insecure-Requests': str(1),
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0'
-    }
-    return headers
-
-
-async def post_measure(session, semaphore, headers, measure):
-    url = 'https://tagarni.net/ctf/prevent'
-    data = json.dumps({
-        'measure': measure
-    })
-    async with semaphore, session.post(url, data=data, headers=headers) as response:
-        html = await response.text()
-        print(html)
-        return html
-
-
-async def get_ioc(session, semaphore, headers, ioc_code):
-    url = f'https://tagarni.net/ctf/iocs/{ioc_code}'
+async def get_instructions(session, semaphore, c2server):
+    url = f'http://{c2server}/ctf'
     async with semaphore, session.get(url, headers=headers) as response:
         return await response.text()
 
 
+async def try_code(session, semaphore, c2server, code):
+    url = f'http://{c2server}/ctf/pieces/{code}'
+    async with semaphore, session.get(url, headers=headers) as response:
+        return await response.text()
+
+
+async def try_measure(session, semaphore, c2server, measure):
+    url = f'http://{c2server}/ctf/prevent'
+    data = json.dumps({
+        'measure': measure
+    })
+    async with semaphore, session.post(url, data=data, headers=headers) as response:
+        return await response.text()
+
+
 async def main():
-    params = get_successful_params() + get_fake_params()
-    concurrency_limit = 250
-    total_sessions = 500
-    headers = make_headers()
+    c2server = 'localhost:1337'
+    domains = generate_domains()
+    codes = urlencode(base64encode(domains))
+    concurrency_limit = len(codes) // 10
     semaphore = asyncio.Semaphore(concurrency_limit)
     start = time.perf_counter()
     async with aiohttp.ClientSession() as session:
-        tasks = [
-            asyncio.create_task(
-                get_ioc(session, semaphore, headers, param)
-            )
-            for param in params
-        ]
+        tasks = [asyncio.create_task(get_instructions(session, semaphore, c2server))] + [
+            asyncio.create_task(try_code(session, semaphore, c2server, code)) for code in codes] + [
+                    asyncio.create_task(try_measure(session, semaphore, c2server, measure)) for measure in
+                    ['d0_n0thing', 'c0ugh_th3_3ld3rly_1n_d4_f4c3']]
         results = await asyncio.gather(*tasks)
         for result in results:
-            print(results)
+            try:
+                body = json.loads(result)
+                if 'piece' in body:
+                    output = 'Looking for measures against COVID-19...'
+                elif 'message' in body:
+                    output = body['message']
+                print(output)
+            except json.decoder.JSONDecodeError:
+                continue
     elapsed = time.perf_counter() - start
     print(f"Time taken: {elapsed:0.2f} seconds")
 
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
-    loop.set_debug(True)
     loop.run_until_complete(main())
